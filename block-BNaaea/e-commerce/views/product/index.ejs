@@ -1,0 +1,69 @@
+
+<%- include('../partials/header.ejs') %>
+<main>
+    <!-- <div class="wrapper">
+        <div class="desc">
+            <% if ( user ) { %>
+            <a href="/users/logout">logout: <%= user.name %></a>
+            <% } %>
+            <% if ( user.isAdmin ) { %>
+                <h4> Admin Login</h4>
+                <a href="/product/new">Add Product</a>
+            <% } %>
+            <h1>Ecommerce App</h1>
+            <p>List of Products</p>
+            <% if ( !product ) { %>
+                <h1><%= product %></h1>
+                <h2> No product to display </h2>
+            <% } %>
+        </div> -->
+        <div class="banner">
+            <h1>Products</h1>
+            <p>Welcome To Product Page</p>
+        </div>
+        <div>
+            <h2>Product lists</h2>
+            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.  </p>
+        </div>
+        <% product.forEach((ele)=>{ %> 
+        <div class="card" style="width: 18rem;">
+            <img src="/uploads/<%= ele.image %>" class="card-img-top" alt="...">
+            <div class="card-body">
+            <h4 class="card-title"> <%= ele.name %> </h4>
+            <p>Price: $<%= ele.price %> </p>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+            <div class="card-body">
+            <a href="#" class="card-link">Add to Cart</a>
+            <a href="/product/<%= ele.slug %>/show" class="card-link">View More</a>
+            </div>
+        </div>
+        <% } ) %>
+        <!-- <div class="content">
+            content here
+            <div class="product-grid product-grid--flexbox">
+                <div class="product-grid__wrapper">
+                    <!-- Product list start here     -->
+                    <!-- Single product -->
+                    <!-- <% product.forEach((ele)=>{ %>
+                        <p>><%= console.log(ele) %></p>
+                    <div class="product-grid__product-wrapper">
+                        <div class="product-grid__product">
+                            <div class="product-grid__img-wrapper">			
+                                <h1><% console.log(ele.cover_image) %></h1>
+                                <img src="/uploads/<%= ele.image %>" alt="<%= ele.image %>" class="product-grid__img" />
+                            </div>
+                            <span class="product-grid__title"><%= ele.name %></span>
+                            <span class="product-grid__price"><%= ele.price %>€</span> -->
+                            <!-- <div class="product-grid__extend-wrapper">
+                                <div class="product-grid__extend">
+                                    <p class="product-grid__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis velit itaque odit.</p>			
+                                    <a href="/product/<%= ele.slug %>/show">  <span class="product-grid__btn product-grid__view"><i class="fa fa-eye"></i>View More </span> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <% }) %>
+                    end Single product --> -->
+    </div>
+</main>

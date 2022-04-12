@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+crossorigin="anonymous"></script>
+
+</head>
+<body>
+<main>
+    <h1>registeration Page</h1>
+    <form action="/users/register" method="POST" >
+        <h2 class="red"><%= message %></h2>
+        <label for="name">Name:</label><br>
+        <input type="text" id="fname" name="name" placeholder="Enter your name"><br>
+        <label for="email">Email:</label><br>
+        <input type="text" id="lname" name="email" placeholder="Enter your email"><br><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="lname" name="password" placeholder="Enter your password"><br>
+        <label for="secret">Secret Code:</label><br>
+        <input type="password" id="lname" name="SECRET" placeholder="Enter your code"><br>
+        <input type="submit" value="Submit">
+    </form> 
+</main>
+<!-- <main>
+    <div class="form_wrapper">
+        <div class="form_container">
+            <div class="title_container">
+                <h2>Registration Form</h2>
+            </div>
+            <div class="row clearfix">
+                <div class="">
+                    <form id='register-form' autocomplete="off" method="POST" action="/users/register">
+                        <div class="row clearfix">
+                            <div class="col_half">
+                                <div class="input_field">
+                                    <span>
+                                        <i aria-hidden="true" class="fa fa-user"></i>
+                                    </span>
+                                    <input type="text" name="firstName" placeholder="First Name" />
+                                </div>
+                            </div>
+                            <div class="col_half">
+                                <div class="input_field">
+                                    <span>
+                                        <i aria-hidden="true" class="fa fa-user"></i>
+                                    </span>
+                                    <input type="text" name="lastName" placeholder="Last Name" required />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input_field">
+                            <span>
+                                <i aria-hidden="true" class="fa fa-envelope"></i>
+                            </span>
+                            <input type="email" name="email" placeholder="Email" required />
+                        </div>
+                        <div class="input_field">
+                            <span><i aria-hidden="true" class="fa fa-lock">
+                                </i>
+                            </span>
+                            <input type="password" name="password" placeholder="Password" required />
+                        </div>
+                        <div class="input_field">
+                            <span>
+                                <i aria-hidden="true" class="fa fa-lock"></i>
+                            </span>
+                            <input type="password" name="re-password" placeholder="Re-type Password" />
+                        </div>
+    
+                        <div class="input_field select_option">
+                            <span><i id='country-icon' aria-hidden="true" class="fa fa-globe"></i>
+                            </span>
+                            <input name='city' type="text" id="country-list" list="country-datalist" placeholder='City' autocomplete="off">
+                            <datalist id="country-datalist" autocomplete="off">
+                            </datalist>
+                            <div id='country-error' class=''></div>
+                        </div>
+                        <input id='submit-data' class="button" type="submit" value="Register" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main> -->
+</body>
+</html>

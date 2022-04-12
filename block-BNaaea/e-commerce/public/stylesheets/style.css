@@ -1,0 +1,13 @@
+.banner {
+  padding: 60px 600px;
+  background-color: rgb(235, 233, 233);
+}
+
+.bg-ylw {
+  background-color: aquamarine;
+}
+
+.flex {
+  display: flex;
+  background-color: blue;
+}
