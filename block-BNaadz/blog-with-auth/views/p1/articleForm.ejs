@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="article-control">
+        <h2>Article Maker</h2>
+        <form class="article-form" method="POST" action="/article/form">
+        <fieldset>
+        <legend>New Article</legend>
+        <input type="text" name="title" id="title" placeholder="title">
+        <textarea name="description" id="txt" cols="30" rows="10" placeholder="description"></textarea>
+        <input type="text" name="author" id="author" placeholder="author">
+        <button type="submit">Submit</button>
+        </fieldset>
+        </form>
+    </div>
+    
+</body>
+</html>

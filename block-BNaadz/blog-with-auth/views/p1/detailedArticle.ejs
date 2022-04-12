@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/sass/p1/_detailedArticle.scss">
+    <title>Document</title>
+</head>
+<body>
+<main>
+  <div class="nav">
+    <nav>
+      <a href="#"> <button>Home</button> </a>
+    </nav>
+    <nav class="nav">
+      <a href="#"> <button>Home</button> </a>
+    </nav>
+  </div>
+    <article class="card">
+        <header class="cardThumb">
+            <a href="#">
+                <img src="https://unsplash.it/370/235/?random">
+            </a>
+        </header>
+        <section>
+        <div class="cardDate">
+            <span class="cardDateDay">1</span>
+            <span class="cardDateMonth">Janv</span>
+        </div>
+        <div class="cardBody">
+            <div class="cardCategory"><a href="#">Article</a></div>
+            <h2 class="cardTitle"><a href="#"><%= article.title %></a></h2>
+            <div class="cardSubtitle"><%= article.author %></div>
+            <p class="cardDescription">
+                    <%= article.description.substring(0,300) %>
+            </p>
+        </div>
+
+    </section>
+
+            <section>
+                <div class="">
+                    <span> <%= article.likes %> </span>
+                    <span class=""><a href="/article/<%=article.slug%>/like">like</a></span>
+                    <span class=""><a href="/article/<%=article.slug%>/dislike">Dislike</a></span>
+                    <span class=""></span><a href="/article/<%=article.slug%>/delete">delete</a>
+                    <span class=""></span><a href="/article/<%=article.slug%>/edit">edit</a>
+                </div>
+                <div class="comments-app">
+
+                    <!-- From -->
+                    <div class="comment-form">
+                      <!-- Comment Avatar -->
+                  
+                      <form class="form" action="/article/<%= article.slug %>/comment/new" method="POST" name="form" ng-submit="form.$valid && cmntCtrl.addComment()" >
+                        <div class="form-row">
+                          <textarea name="content" class="input" ng-model="cmntCtrl.comment.text" placeholder="Add comment..." required></textarea>
+                        </div>
+                        <div class="form-row">
+                          <input type="submit" value="Add Comment">
+                        </div>
+                      </form>
+                    </div>
+                  
+                    <!-- Comments List -->
+                    <div class="comments">
+                      <!-- Comment -->
+                      <div class="comment" ng-repeat="comment in cmntCtrl.comments | orderBy: '-date'">
+                        <!-- Comment Avatar -->
+                        <div class="comment-avatar">
+                        
+                    </div>
+                    </div>
+                    </div>
+                        <% article.Comments.forEach((comment)=>{ %>
+
+                        <div class="comment">
+                            <div class="comment-box">
+                              <div class="comment-text"> <%= comment.content %></div>
+                              <div class="comment-footer">
+                                <div class="comment-info">
+                                  <span class="comment-author">
+                                <div class="comment-actions">
+                                <span>
+                                    <a href="/article/<%= article.slug %>/comment/<%= comment.id %>/delete">delete</a>
+                                    <a href="/article/<%= article.slug %>/comment/<%= comment.id %>/edit">edit</a>
+                                </span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <% }) %>
+                    </div>
+            </section>
+    </article>
+  </main>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!-- header -->
+<%- include('../partials/head'); %>
+    <header>
+        <%- include('../partials/nav'); %>
+    </header>
+<!-- main -->
+    <main class="all-article">
+        <% if ( article.length === 0 ) { %>
+            <div class="box" >
+                <h1>No Article is Here</h1>
+            </div>
+        <% } else { %>
+            <div class="box">
+                <h1>My Blog</h1>
+            </div>
+            <% article.forEach((art)=>{ %>   
+                <article class="art container">
+                    <img src="https://media.giphy.com/media/10SvWCbt1ytWCc/giphy.gif" />
+                    <h2><%= art.title %></h2>
+                    <p><%= art.description.substring(0,100) + "..." %></p>
+                    <a href="/article/<%= art.slug %>/detail" class="more">Details</a>
+                </article>
+            <% }) %>
+            </div>
+        <% } %>
+    </main>
+</body>
+</html>
