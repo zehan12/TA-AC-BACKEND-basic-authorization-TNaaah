@@ -1,0 +1,53 @@
+* {
+	box-sizing: border-box;
+}
+
+[name="title"] {
+	font-weight: bold;
+}
+
+.article-control {
+	display: inline-block;
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+	padding: 0 25px;
+}
+
+.article-form {
+	width: 300px;
+}
+.article-form fieldset {
+	border: 2px solid lightblue;
+	padding: 15px;
+}
+.article-form fieldset legend {
+	padding: 5px;
+}
+.article-form input, .article-form textArea, .article-form button {
+	margin-top: 10px;
+	width: 100%;
+	border: 1px solid black;
+}
+.article-form button {
+	background: lightblue;
+	padding: 10px;
+}
+
+.article-list {
+	padding: 30px;
+	padding-top: 0px;
+	width: calc(100% - 330px);
+	float: right;
+	border: 1px solid black;
+	min-height: 400px;
+}
+.article-list article {
+	box-shadow: 0px 7px 10px #ddd;
+	padding: 10px;
+}
+.article-list .active-article {
+	box-shadow: 0px 6px 25px rgba(173, 216, 230, 0.7);
+}

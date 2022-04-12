@@ -1,0 +1,70 @@
+<!-- header -->
+<%- include('../partials/head'); %>
+    <header>
+        <%- include('../partials/nav'); %>
+    </header>
+    <!-- main -->
+    <main class="show-container">
+    <!-- horizontal -->
+        <div class="flip">
+            <div class="front" style="background-image: url(https://unsplash.it/370/235/?random)">
+            <h1 class="text-shadow"><%= article.title %></hi>
+            </div>
+            <div class="back">
+            <h2>By: <%= article.author.toUpperCase(); %></h2>
+            <p><%= article.description %></p>
+            </div>
+        </div>
+        
+        <div class="">
+                <span> <%= article.likes %> </span>
+                <span class=""><a href="/article/<%=article.slug%>/like">like</a></span>
+                <span class=""><a href="/article/<%=article.slug%>/dislike">Dislike</a></span>
+                <span class=""></span><a href="/article/<%=article.slug%>/delete">delete</a>
+                <span class=""></span><a href="/article/<%=article.slug%>/edit">edit</a>
+        </div>
+
+        <div class="comments-app" >
+        <!-- From -->
+            <div class="comment-form">
+            <form class="form" name="form" action="/article/<%= article.slug %>/comment/new" method="POST" >
+            <div class="form-row">
+            <textarea
+                        class="input" name="content"
+                        placeholder="Add comment..."
+                        required></textarea>
+                        <button class="raise">Add</button>
+            </div>
+            </div>
+        </div>
+
+        <!-- comment list -->
+    <% article.Comments.forEach((comment)=>{ %>
+    <div class="comments-container">
+		<ul id="comments-list" class="comments-list">
+			<li>
+				<div class="comment-main-level">
+					<!-- Avatar -->
+					<div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_2_zps7de12f8b.jpg" alt=""></div>
+					<!-- Contenedor del Comentario -->
+					<div class="comment-box">
+						<div class="comment-head">
+							<h6 class="comment-name"><a href="http://creaticode.com/blog">Lorena Rojero</a></h6>
+							<span><%= comment.createdAt %></span>
+							<i class="fa fa-reply"></i>
+							<i class="fa fa-heart"></i>
+						</div>
+						<div class="comment-content">
+							<%=  comment.content %>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+    <% }) %>
+    </main>
+
+
+</body>
+</html>
