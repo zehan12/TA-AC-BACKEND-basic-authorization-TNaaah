@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/sass/p1/_register.scss">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">  
+     <form id="contact" action="/users/register" method="post">
+            <h3>Registration Form</h3>
+            <h4>please enter your contact details</h4>
+            <fieldset>
+                    <input name="firstname" placeholder="Your First name" type="text" tabindex="1" required autofocus>
+            </fieldset>
+            <fieldset>
+                    <input name="lastname" placeholder="Your Last name" type="text" tabindex="1" required autofocus>
+            </fieldset>
+            <fieldset>
+                    <input name="email" placeholder="Your Email Address" type="email" tabindex="2" required>
+            </fieldset>
+            <fieldset>
+                    <input name="password" placeholder="Create a password" type="password" tabindex="3" required>
+            </fieldset>
+            <fieldset>
+                    <input name="city" placeholder="Enter Your City Name" type="text" tabindex="4">
+            </fieldset>
+            <fieldset>
+                    <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Register</button>
+            </fieldset>
+     </form>
+    </div>
+</body>
+</html>

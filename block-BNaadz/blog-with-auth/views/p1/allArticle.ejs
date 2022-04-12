@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <%if ( article.length === 0) { %>
+        <h1>NO Article</h1>
+    <% } else { %>
+        <div>
+            <h1 id="header" class="text-primary">My Blog</h1>
+            <% article.forEach((art)=>{ %>                   
+                    <div class="container list-article">
+                    <div class="btn-group pull-right" id="switch-view">
+                        <button class="btn btn-primary">
+                        <span class="icon-th-large"></span>
+                        </button>
+                        <button class="btn btn-primary active">
+                        <span class="icon-th-list"></span>
+                        </button>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="row">
+                        <div class="col-xs-12 article-wrapper">
+                        <article>
+                            <h2><%= art.title %></h2>
+                            <p><%= art.description.substring(0,100) %></p>
+                            <a href="/article/<%= art.slug %>/detail" class="more">Details</a>
+                        </article>
+            <% }) %>
+        </div>
+    <% } %>
+</body>
+</html>

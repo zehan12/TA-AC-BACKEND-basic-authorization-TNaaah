@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/editComment.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="form-main">
+        <div id="form-div">
+        <form class="form" id="form1" method="POST" action="/article/<%= article.slug %>/edit">
+            <p class="name"> Title
+            <input name="title" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" value="<%= article.title %>" id="name" />
+            </p>
+            <p class="text"> Description
+            <textarea name="description" class="validate[required,length[6,300]] feedback-input" id="comment" > <%= article.description %> </textarea>
+            </p>
+            <p class="name"> Author Name
+                <input name="author" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" value="<%= article.author %>" id="name" />
+            </p>
+            <div class="submit">
+            <input type="submit" value="SEND" id="button-blue"/>
+            <div class="ease"></div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
